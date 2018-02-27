@@ -9,4 +9,10 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 @SuppressLint("ParcelCreator") // 解决IntelliJ编译时报警告
-class User(val firstName: String, var lastName: String, var age: Int):Parcelable
+class User( val firstName: String,  var lastName: String,  var age: Int):Parcelable{
+
+    val limited : Boolean get() {
+        return firstName.isNotEmpty() && lastName.isNotEmpty() && age > 16
+    }
+
+}
