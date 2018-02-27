@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KotlinDemo</string>
+    <string name="hello_kotlin">"Hello Kotlin"</string>
+    <string name="btn_click">click</string>
+</resources>

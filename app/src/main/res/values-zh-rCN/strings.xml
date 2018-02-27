@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KotlinDemo</string>
+    <string name="hello_kotlin">"你好，科特林"</string>
+    <string name="btn_click">点击</string>
+</resources>
