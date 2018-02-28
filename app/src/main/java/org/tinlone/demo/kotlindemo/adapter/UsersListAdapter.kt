@@ -1,4 +1,4 @@
-package org.tinlone.demo.kotlindemo
+package org.tinlone.demo.kotlindemo.adapter
 
 import android.annotation.SuppressLint
 import android.support.v7.widget.RecyclerView
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import org.tinlone.demo.kotlindemo.R
 import org.tinlone.demo.kotlindemo.bean.User
 import org.tinlone.demo.kotlindemo.config.Randoms
 

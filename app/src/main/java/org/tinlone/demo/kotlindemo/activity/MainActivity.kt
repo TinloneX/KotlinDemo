@@ -1,4 +1,4 @@
-package org.tinlone.demo.kotlindemo
+package org.tinlone.demo.kotlindemo.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.Toast
 import kotlinx.android.extensions.CacheImplementation
 import kotlinx.android.extensions.ContainerOptions
 import kotlinx.android.synthetic.main.activity_main.*
+import org.tinlone.demo.kotlindemo.R
+import org.tinlone.demo.kotlindemo.adapter.UsersListAdapter
 import org.tinlone.demo.kotlindemo.bean.User
 import org.tinlone.demo.kotlindemo.config.Datas
 import org.tinlone.demo.kotlindemo.config.Values
