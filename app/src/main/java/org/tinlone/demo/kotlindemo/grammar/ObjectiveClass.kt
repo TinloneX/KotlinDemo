@@ -7,7 +7,7 @@ object ObjectiveClass {
         aoo()
     }
 
-    fun aoo() {
+    private fun aoo() {
         val tom = Teacher("Tom")
         tom.gender = true
         tom.doSomething()
@@ -140,7 +140,7 @@ object ObjectiveClass {
          * 问：有没有实现Person的stop方法
          */
         override fun stop() {
-            super<Power>.stop()
+            super.stop()
         }
 
     }

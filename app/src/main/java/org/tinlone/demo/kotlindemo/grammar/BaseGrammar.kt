@@ -2,6 +2,7 @@ package org.tinlone.demo.kotlindemo.grammar
 
 
 /**
+ * 基本语法
  * @author Administrator on 2018/2/28 0028.
  */
 object BaseGrammar {
@@ -25,33 +26,33 @@ object BaseGrammar {
     /**
      * 显式声明返回类型
      */
-    fun sum(a: Int, b: Int): Int {
+    private fun sum(a: Int, b: Int): Int {
         return a + b
     }
 
     /**
      * 自检测返回类型
      */
-    fun sum2(a: Int, b: Int) = a + b
+    private fun sum2(a: Int, b: Int) = a + b
 
     /**
      * 无意义类型
      */
-    fun sum3(a: Int, b: Int): Unit {
+    private fun sum3(a: Int, b: Int): Unit {
         println("$a + $b = ${a + b}")
     }
 
     /**
      * 无意义类型Unit可以省略
      */
-    fun sum4(a: Int, b: Int) {
+    private fun sum4(a: Int, b: Int) {
         println("$a + $b = ${a + b}")
     }
 
     /**
      * 字符模版 类似于String.format()
      */
-    fun textModel() {
+    private fun textModel() {
         var a = 1
         // 模板中的简单名称：
         val s1 = "a is $a"
@@ -64,19 +65,19 @@ object BaseGrammar {
     /**
      * 条件表达式
      */
-    fun max(a: Int, b: Int) = if (a > b) a else b
+    private fun max(a: Int, b: Int) = if (a > b) a else b
 
     /**
      * 可空返回值
      */
-    fun toStr(obj: Any): Int? {
+    private fun toStr(obj: Any): Int? {
         return 12
     }
 
     /**
      * 可空值的使用
      */
-    fun canNull(arg1: Any?) {
+    private fun canNull(arg1: Any?) {
         val a = arg1?.toString() + "" // obj?. 类似于 if(obj != null)
 
         val x = toStr(a)
@@ -92,14 +93,16 @@ object BaseGrammar {
     /**
      * 类型检测
      */
-    fun getStringLength(obj: Any): Int? {
+    private fun getStringLength(obj: Any): Int? {
         if (obj is String) {
             // `obj` 在该条件分支内自动转换成 `String`
             return obj.length
-        } else  // `obj` 在 `&&` 右边自动转换成 `String` 类型
-            if (obj is String && obj.length > 0) {
-                return obj.length
-            }
+        } else if (obj is String && obj.length > 0) {
+            // `obj` 在 `&&` 右边自动转换成 `String` 类型
+            return obj.length
+        } else if (obj is Collection<*>) {
+            return obj.size
+        }
         // 在离开类型检测分支后，`obj` 仍然是 `Any` 类型
         return null
     }
@@ -107,7 +110,7 @@ object BaseGrammar {
     /**
      * for 循环
      */
-    fun forList() {
+    private fun forList() {
         val items = listOf("apple", "banana", "kiwi")
         for (item in items) {
             println(item)
@@ -121,7 +124,7 @@ object BaseGrammar {
     /**
      * while 循环
      */
-    fun whileList() {
+    private fun whileList() {
         val items = listOf("apple", "banana", "kiwi")
         var index = 0
         while (index < items.size) {
@@ -133,7 +136,7 @@ object BaseGrammar {
     /**
      * when 分支判断，类比：switch-case
      */
-    fun whenCase(obj: Any): String =
+    private fun whenCase(obj: Any): String =
             when (obj) {
                 1 -> "One"
                 "Hello" -> "Greeting"
@@ -145,7 +148,7 @@ object BaseGrammar {
     /**
      * 区间  start..end
      */
-    fun rangeUsed() {
+    private fun rangeUsed() {
         val x = 10
         // 判断在不在区间内
         if (x in 0..100) {
@@ -177,7 +180,7 @@ object BaseGrammar {
         }
     }
 
-    fun inUse() {
+    private fun inUse() {
         //对集合进行迭代:
         val items = listOf("apple", "banana", "kiwi")
         for (item in items) {

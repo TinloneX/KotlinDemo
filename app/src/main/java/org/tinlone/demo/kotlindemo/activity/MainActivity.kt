@@ -46,6 +46,6 @@ class MainActivity : AppCompatActivity(), UsersListAdapter.OnItemClick {
     override fun onClick(position: Int) {
         val user = usersList[position]
         tvHello.text = "${user.firstName}.${user.lastName}"
-        Toast.makeText(this, "limited accass?${!user.limited}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "limited access?${!user.limited}", Toast.LENGTH_SHORT).show()
     }
 }

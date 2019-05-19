@@ -1,5 +1,8 @@
 package org.tinlone.demo.kotlindemo.grammar
 
+/**
+ * 方法扩展
+ */
 object Enlarge {
 
     @JvmStatic
@@ -12,7 +15,7 @@ object Enlarge {
         C().caller(D())
     }
 
-    fun <T> MutableList<T>.swap(index1: Int, index2: Int) {
+    private fun <T> MutableList<T>.swap(index1: Int, index2: Int) {
         val tmp = this[index1]
         this[index1] = this[index2]
         this[index2] = tmp
@@ -23,16 +26,14 @@ object Enlarge {
         return toString()
     }
 
-    val <T> List<T>.lastIndex: Int
+    private val <T> List<T>.lastIndex: Int
         get() = size - 1
 
     class MyClass {
-        companion object {
-
-        }
+        companion object
     }
 
-    fun MyClass.Companion.foo() {
+    private fun MyClass.Companion.foo() {
         println("hello")
     }
 
@@ -47,11 +48,11 @@ object Enlarge {
     }
 
     class C{
-        fun baz(){
+        private fun baz(){
             println("c.baz()")
         }
 
-        fun D.foo(){
+        private fun D.foo(){
             bar()
             baz()
         }
